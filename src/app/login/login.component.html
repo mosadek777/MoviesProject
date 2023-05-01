@@ -1,0 +1,34 @@
+<div class="container">
+
+<div class="my-3">
+    <h1 class="text-capitalize text-center">login form</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="submitLoginForm()">
+    
+    
+    
+        <div class="my-2">
+            <label for="">email</label>
+            <input class="form-control" type="email" formControlName="email">
+            <div *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched" class="text-danger mt-2">
+                <p class="fa-bounce" style=" --fa-bounce-start-scale-x: 1; --fa-bounce-start-scale-y: 1; --fa-bounce-jump-scale-x: 1; --fa-bounce-jump-scale-y: 1; --fa-bounce-land-scale-x: 1; --fa-bounce-land-scale-y: 1; --fa-bounce-rebound: 0;" *ngIf="loginForm.controls.email.errors?.required">email is required</p>
+                <p class="fa-fade"  *ngIf="loginForm.controls.email.errors?.email">email is invalid</p>
+            </div>
+        </div>
+    
+    
+        <div class="my-2">
+            <label for="">password</label>
+            <input class="form-control" type="password" formControlName="password">
+            <div *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched" class="text-danger mt-2">
+                <p class="fa-bounce" style=" --fa-bounce-start-scale-x: 1; --fa-bounce-start-scale-y: 1; --fa-bounce-jump-scale-x: 1; --fa-bounce-jump-scale-y: 1; --fa-bounce-land-scale-x: 1; --fa-bounce-land-scale-y: 1; --fa-bounce-rebound: 0;" *ngIf="loginForm.controls.password.errors?.required">password is required</p>
+                <p class="fa-fade"  *ngIf="loginForm.controls.password.errors?.pattern">Password is invalid "must be a letter followed by 3 numbers"</p>
+            </div>
+        </div>
+    
+    
+
+        <button [disabled]="loginForm.invalid" class="btn btn-primary" type="submit">login</button>
+    </form>
+</div>
+    
+</div>

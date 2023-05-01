@@ -1,0 +1,70 @@
+<div class="container">
+
+
+
+<div class="my-3">
+    <h1 class="text-capitalize text-center my-2 ">register form</h1>
+    <form [formGroup]="registerForm" (ngSubmit)="submitRegisterForm()">
+        <div class="my-2 ">
+            <label>first name</label>
+            <input class="form-control" type="text" formControlName="first_name">
+            <div *ngIf="registerForm.controls.first_name.invalid && registerForm.controls.first_name.touched" class="text-danger mt-2">
+                <p class="fa-bounce" style=" --fa-bounce-start-scale-x: 1; --fa-bounce-start-scale-y: 1; --fa-bounce-jump-scale-x: 1; --fa-bounce-jump-scale-y: 1; --fa-bounce-land-scale-x: 1; --fa-bounce-land-scale-y: 1; --fa-bounce-rebound: 0;" *ngIf="registerForm.controls.first_name.errors?.required">first name is required</p>
+                <p class="fa-fade"  *ngIf="registerForm.controls.first_name.errors?.minlength">first name min length is 3</p>
+                <p class="fa-fade" *ngIf="registerForm.controls.first_name.errors?.maxlength">first name max length is 10</p>
+
+
+            </div>
+        </div>
+    
+        <div class="my-2">
+            <label for="">last name</label>
+            <input class="form-control" type="text" formControlName="last_name">
+            <div *ngIf="registerForm.controls.last_name.invalid && registerForm.controls.last_name.touched" class="text-danger mt-2">
+                <p class="fa-bounce" style=" --fa-bounce-start-scale-x: 1; --fa-bounce-start-scale-y: 1; --fa-bounce-jump-scale-x: 1; --fa-bounce-jump-scale-y: 1; --fa-bounce-land-scale-x: 1; --fa-bounce-land-scale-y: 1; --fa-bounce-rebound: 0;" *ngIf="registerForm.controls.last_name.errors?.required">last name is required</p>
+                <p class="fa-fade"  *ngIf="registerForm.controls.last_name.errors?.minlength">last name min length is 3</p>
+                <p class="fa-fade" *ngIf="registerForm.controls.last_name.errors?.maxlength">last name max length is 10</p>
+
+
+            </div>
+        </div>
+    
+    
+    
+        <div class="my-2">
+            <label for="">email</label>
+            <input class="form-control" type="email" formControlName="email">
+            <div *ngIf="registerForm.controls.email.invalid && registerForm.controls.email.touched" class="text-danger mt-2">
+                <p class="fa-bounce" style=" --fa-bounce-start-scale-x: 1; --fa-bounce-start-scale-y: 1; --fa-bounce-jump-scale-x: 1; --fa-bounce-jump-scale-y: 1; --fa-bounce-land-scale-x: 1; --fa-bounce-land-scale-y: 1; --fa-bounce-rebound: 0;" *ngIf="registerForm.controls.email.errors?.required">email is required</p>
+                <p class="fa-fade"  *ngIf="registerForm.controls.email.errors?.email">email is invalid</p>
+            </div>
+        </div>
+    
+    
+        <div class="my-2">
+            <label for="">password</label>
+            <input class="form-control" type="password" formControlName="password">
+            <div *ngIf="registerForm.controls.password.invalid && registerForm.controls.password.touched" class="text-danger mt-2">
+                <p class="fa-bounce" style=" --fa-bounce-start-scale-x: 1; --fa-bounce-start-scale-y: 1; --fa-bounce-jump-scale-x: 1; --fa-bounce-jump-scale-y: 1; --fa-bounce-land-scale-x: 1; --fa-bounce-land-scale-y: 1; --fa-bounce-rebound: 0;" *ngIf="registerForm.controls.password.errors?.required">password is required</p>
+                <p class="fa-fade"  *ngIf="registerForm.controls.password.errors?.pattern">Password is invalid "must be a letter followed by 3 numbers"</p>
+            </div>
+        </div>
+    
+    
+        <div class="my-2">
+            <label for="">age</label>
+            <input class="form-control" type="number" formControlName="age">
+            <div *ngIf="registerForm.controls.age.invalid && registerForm.controls.age.touched" class="text-danger mt-2">
+                <p class="fa-bounce" style=" --fa-bounce-start-scale-x: 1; --fa-bounce-start-scale-y: 1; --fa-bounce-jump-scale-x: 1; --fa-bounce-jump-scale-y: 1; --fa-bounce-land-scale-x: 1; --fa-bounce-land-scale-y: 1; --fa-bounce-rebound: 0;" *ngIf="registerForm.controls.age.errors?.required">age is required</p>
+             
+                <p class="fa-fade" *ngIf="registerForm.controls.age.errors?.pattern">age must be between 20 to 80</p>
+
+
+            </div>
+        </div>
+        <button [disabled]="registerForm.invalid" class="btn btn-info" type="submit">register</button>
+    </form>
+</div>
+</div>
+
+

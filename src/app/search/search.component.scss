@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Signika&display=swap');
+h2,p,input
+{
+    font-family: 'Cairo', 'Signika';
+}
+.content{
+    overflow: hidden;
+    .overview
+    {
+        background-color:rgba($color: rgb(18, 19, 19), $alpha: 0.3);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      transition: all 0.4s;
+      overflow: hidden;
+    }
+    &:hover
+    .overview
+    {
+        top:0
+    }
+}

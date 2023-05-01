@@ -1,0 +1,21 @@
+<p>search works!</p>
+<div class="container-fluid">
+    <input #referenceInput type="text" (input)="getMovies(referenceInput.value)" class="form-control w-50 mx-auto" placeholder="search..">
+    <div class="row gy-4 justify-content-evenly my-3 ">
+        <div *ngFor="let movie of getSearchMovies" class="col-md-3 g-3 position-relative content  m-3">
+            <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path ?? movie.profile_path}}" onerror="this.src='../../assets/imageNotFound.jpg '" class="w-100" alt="">
+            <h2 class="text-center pt-2">{{movie.title ?? movie.name}}</h2>
+            <span class="rating p-2 bg-success position-absolute top-0 end-0">{{movie.vote_average | number:'1.0-1'}}</span>
+         <div class="overview d-flex  align-items-center">
+            <div>
+            <p class="p-3">{{movie.overview |seeMore:35}}</p>
+        </div>
+         </div>
+       
+        </div>
+    </div>
+</div>
+
+
+
+

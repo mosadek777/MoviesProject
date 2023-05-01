@@ -1,0 +1,84 @@
+<ngx-spinner bdColor = "rgba(132,119,119,0.8)" size = "medium" color = "#fff" type = "pacman" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<app-header-slider [trendingMovies]="trendingMovies"></app-header-slider>
+<div class="container">
+
+<div class="row align-items-center">
+<div class="col-md-4 ">
+  <div class="w-25 custom-border"></div>
+  <h2 class="my-4">Trending <br> Movies <br> To Watch Now</h2>
+  <P class="text-muted">Trending  Movies  To Watch Now</P>
+  <div class="w-100 custom-border"></div>
+</div>
+    <div *ngFor="let movie of trendingMovies" class="col-md-2 py-4">
+        <div class="position-relative details" [routerLink]="['/movieDetails',movie.id]">
+            <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" class="w-100" alt="">
+            <h5 class="text-center pt-2">{{movie.title}}</h5>
+          <span class="rating p-2 bg-success position-absolute top-0 end-0">{{movie.vote_average}}</span>
+        </div>
+    </div>
+</div>
+
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+   
+      <li (click)="getTrendingMovies(1)" class="page-item"><a class="page-link">1</a></li>
+      <li (click)="getTrendingMovies(2)" class="page-item"><a class="page-link">2</a></li>
+      <li (click)="getTrendingMovies(3)" class="page-item"><a class="page-link">3</a></li>
+      <li (click)="getTrendingMovies(4)" class="page-item"><a class="page-link">4</a></li>
+    
+    </ul>
+  </nav>
+
+
+
+
+
+<div class="row py-5 align-items-center  ">
+  <div class="col-md-4   ">
+    <div class="w-25 custom-border"></div>
+    <h2 class="my-4">Trending <br> Tvshows <br> To Watch Now</h2>
+    <P class="text-muted">Trending  Tvshows  To Watch Now</P>
+    <div class="w-100 custom-border"></div>
+  </div>
+    <div *ngFor="let TvShows of trendingTvshows" class="col-md-2 my-2">
+        <div class="position-relative">
+            <!-- <img src="{{imagePath}}{{TvShows.poster_path}}?{{imagePath}}{{TvShows.poster_path}}:{{imagePath}}{{TvShows.backdrop_path}}? " class="w-100" alt=""> -->
+     
+     <img src="{{TvShows.poster_path ? (imagePath + TvShows.poster_path) : (imagePath + TvShows.backdrop_path)}}" class="w-100" alt=""> 
+
+            <h5 class="text-center pt-2">{{TvShows.name}}</h5>
+            <span class="rating p-2 bg-success position-absolute top-0 end-0">{{TvShows.vote_average}}</span>
+
+        </div>
+    </div>
+</div>
+
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+   
+      <li (click)="getTrendingTvshows(1)" class="page-item"><a class="page-link">1</a></li>
+      <li (click)="getTrendingTvshows(2)" class="page-item"><a class="page-link">2</a></li>
+      <li (click)="getTrendingTvshows(3)" class="page-item"><a class="page-link">3</a></li>
+      <li (click)="getTrendingTvshows(4)" class="page-item"><a class="page-link">4</a></li>
+    
+    </ul>
+  </nav>
+
+
+  <div class="row align-items-center">
+    <div class="col-md-4 ">
+      <div class="w-25 custom-border"></div>
+      <h2 class="my-4">Trending <br> People <br> To Watch Now</h2>
+      <P class="text-muted">Trending  People  To Watch Now</P>
+      <div class="w-100 custom-border"></div>
+    </div>
+        <div *ngFor="let people of trendingPeople" class="col-md-2 py-4">
+            <div class="position-relative">
+                <img src="https://image.tmdb.org/t/p/w500/{{people.profile_path}}" class="w-100" alt="">
+                <h5 class="text-center pt-2">{{people.name}}</h5>
+            </div>
+        </div>
+    </div>
+  </div>

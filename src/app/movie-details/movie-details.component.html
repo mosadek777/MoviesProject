@@ -1,0 +1,20 @@
+<div class="container">
+
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="https://image.tmdb.org/t/p/w500/{{movieDetails.poster_path}}" class="w-100" alt="">
+    </div>
+    <div class="col-md-8 ">
+        <h2>{{movieDetails.title}}</h2>
+        <h4 class="text-muted">{{movieDetails.tagline}}</h4>
+        
+        <ul *ngFor="let genere of movieDetails.genres">{{genere.name}}</ul>
+      <h6 class="my-4">vote : {{movieDetails.vote_average}}</h6>
+      <h6 class="my-4">vote Count : {{movieDetails.vote_count}}</h6>
+      <h6 class="my-4">popularity: {{movieDetails.popularity}}</h6>
+      <h6 class="my-4">release date : {{movieDetails.release_date}}</h6>
+      <p class="text-muted my-4">{{movieDetails.overview}}</p>
+    </div>
+</div>
+</div>
