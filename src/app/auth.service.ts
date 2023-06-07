@@ -25,11 +25,11 @@ this.userData.next(data)
 }
 
   signUp(registerData:any): Observable<any> {
-return this._httpClient.post(`https://sticky-note-fe.vercel.app/signup`,registerData)
+return this._httpClient.post(`https://route-ecommerce.onrender.com/api/v1/auth/signup`,registerData)
   }
 
   signIn(loginData:any): Observable<any> {
-    return this._httpClient.post(`https://sticky-note-fe.vercel.app/signin`,loginData)
+    return this._httpClient.post(`https://route-ecommerce.onrender.com/api/v1/auth/signin`,loginData)
       }
     
 
