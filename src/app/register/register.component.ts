@@ -18,7 +18,7 @@ registerForm:FormGroup= new FormGroup({
   "first_name":new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(10)]),
   "last_name":new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(10)]),
   "email":new FormControl(null,[Validators.required,Validators.email]),
-  "password":new FormControl(null,[Validators.required,Validators.pattern(/^[a-z][0-9]{3}$/)]),
+  "password":new FormControl(null,[Validators.required,Validators.pattern(/^[A-Z][a-z0-9]{3,8}$/)]),
 "age":new FormControl(null,[Validators.required,Validators.pattern(/^([2-7][0-9]|80)$/)])
 })
 
