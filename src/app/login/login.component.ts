@@ -16,8 +16,8 @@ export class LoginComponent {
  
  loginForm:FormGroup= new FormGroup({
  
-  "email":new FormControl(null,[Validators.required,Validators.email]),
-  "password":new FormControl(null,[Validators.required,Validators.pattern(/^[a-z][0-9]{3}$/)]),
+  email:new FormControl(null,[Validators.required,Validators.email]),
+  password:new FormControl(null,[Validators.required,Validators.pattern(/^[A-Z][a-z0-9]{3,8}$/)]),
   })
   submitLoginForm(){
     if (this.loginForm.invalid) {

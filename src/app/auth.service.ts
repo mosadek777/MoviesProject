@@ -24,12 +24,12 @@ saveUser(){
 this.userData.next(data)
 }
 
-  signUp(registerData:any): Observable<any> {
-return this._httpClient.post(`https://route-ecommerce.onrender.com/api/v1/auth/signup`,registerData)
+  signUp(data:any): Observable<any> {
+return this._httpClient.post(`https://route-ecommerce.onrender.com/api/v1/auth/signup`,data)
   }
 
-  signIn(loginData:any): Observable<any> {
-    return this._httpClient.post(`https://route-ecommerce.onrender.com/api/v1/auth/signin`,loginData)
+  signIn(data:any): Observable<any> {
+    return this._httpClient.post(`https://route-ecommerce.onrender.com/api/v1/auth/signin`,data)
       }
     
 
